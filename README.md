@@ -15,8 +15,8 @@
 
 ### Association
 
-- has_many :Items
-- has_many :Transaction, through: :User_Transaction
+- has_many :items
+- has_many :transactions, through: :user_transaction
 
 
 ## Items テーブル
@@ -35,8 +35,8 @@
 
 ### Association
 
-- belongs_to :Users
-- has_one :Transactions
+- belongs_to :user
+- has_one :transaction
 
 
 ## Transactions テーブル
@@ -49,9 +49,9 @@
 
 ### Association
 
-- has_one :Items
-- has_many :Users, through: :User_Transactions
-- has_one :Send_addresses
+- has_one :item
+- has_many :users, through: :user_transactions
+- has_one :send_address
 
 
 ## Send_addresses テーブル
@@ -67,4 +67,4 @@
 
 ### Association
 
-- has_one :Transactions
+- has_one :transaction
