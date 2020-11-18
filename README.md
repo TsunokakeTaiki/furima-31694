@@ -56,14 +56,15 @@
 
 ## Send_addresses テーブル
 
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| postial_code | integer | null: false |
-| prefecture   | string  | null: false |
-| city         | string  | null: false |
-| addresses    | string  | null: false |
-| building     | string  |             |
-| phone_number | integer | null: false |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| postial_code | integer    | null: false                    |
+| prefecture   | string     | null: false                    |
+| city         | string     | null: false                    |
+| addresses    | string     | null: false                    |
+| building     | string     |                                |
+| phone_number | integer    | null: false                    |
+| transaction  | references | null: false, foreign_key: true |
 
 ### Association
 
