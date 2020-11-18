@@ -7,10 +7,10 @@
 | nickname           | string  | null: false |
 | email              | string  | null: false |
 | encrypted_password | string  | null: false |
-| first-name         | string  | null: false |
-| last-name          | string  | null: false |
-| first-name-kana    | string  | null: false |
-| last-name-kana     | string  | null: false |
+| first_name         | string  | null: false |
+| last_name          | string  | null: false |
+| first_name_kana    | string  | null: false |
+| last_name_kana     | string  | null: false |
 | user_birth_date    | date    | null: false |
 
 ### Association
@@ -25,12 +25,12 @@
 | ------------------------ | ------- | ----------- |
 | name                     | string  | null: false |
 | info                     | text    | null: false |
-| item-category            | string  | null: false |
-| item-sales-status        | string  | null: false |
-| item-shipping-fee-status | string  | null: false |
-| item-prefecture          | string  | null: false |
-| item-scheduled-delivery  | string  | null: false |
-| item-price               | integer | null: false |
+| item_category            | string  | null: false |
+| item_sales_status        | string  | null: false |
+| item_shipping_fee-status | string  | null: false |
+| item_prefecture          | string  | null: false |
+| item_scheduled_delivery  | string  | null: false |
+| item_price               | integer | null: false |
 
 ### Association
 
@@ -57,12 +57,12 @@
 
 | Column       | Type    | Options     |
 | ------------ | ------- | ----------- |
-| postial-code | integer | null: false |
+| postial_code | integer | null: false |
 | prefecture   | string  | null: false |
 | city         | string  | null: false |
 | addresses    | string  | null: false |
 | building     | string  |             |
-| phone-number | integer | null: false |
+| phone_number | integer | null: false |
 
 ### Association
 
