@@ -48,7 +48,7 @@
 ### Association
 
 - belongs_to :item
-- has_many :users, through: :user_transactions
+- belongs_to :user
 - has_one :send_address
 
 
