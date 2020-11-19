@@ -11,13 +11,12 @@
 | last_name          | string  | null: false |
 | first_name_kana    | string  | null: false |
 | last_name_kana     | string  | null: false |
-| user_birth_date    | date    | null: false |
+| birth_date         | date    | null: false |
 
 ### Association
 
 - has_many :items
-- has_many :transactions, through: :user_transaction
-
+- has_many :transactions
 
 ## Items テーブル
 
