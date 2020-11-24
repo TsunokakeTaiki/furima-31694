@@ -1,8 +1,12 @@
 require 'rails_helper'
 RSpec.describe User, type: :model do
+  before do
+    @user = FactoryBot.build(:user)
+  end
   describe 'ユーザー新規登録' do
     context '新規登録がうまくいくとき' do
       it "nickname、email、password、password_confirmation、first_name、last_name、first_name_kana、last_name_kana、birth_dateが存在すれば登録できる" do
+        expect(@user).to be_valid
       end
       it "nicknameが40文字以下で登録できる" do
       end
