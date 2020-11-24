@@ -9,16 +9,29 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
       it "nicknameが40文字以下で登録できる" do
+        @user.nickname = Faker::Name.initials(number: 40)
+        expect(@user).to be_valid
       end
       it "passwordが英数字6文字以上であれば登録できる" do
+        @user.password = "ab12345"
+        @user.password_confirmation = "ab12345"
+        expect(@user).to be_valid
       end
       it "first_nameが全角であれば登録できる" do
+        @user.first_name = "テスト"
+        expect(@user).to be_valid
       end
       it "last_nameが全角であれば登録できる" do
+        @user.last_name = "テスト"
+        expect(@user).to be_valid
       end
       it "first_name_kanaが全角カタカナであれば登録できる" do
+        @user.first_name_kana = "テスト"
+        expect(@user).to be_valid
       end
       it "last_name_kanaが全角カタカナであれば登録できる" do
+        @user.last_name_kana = "テスト"
+        expect(@user).to be_valid
       end
     end
 
