@@ -15,7 +15,7 @@ RSpec.describe User, type: :model do
       it "first_name_kanaが全角カタカナであれば登録できる" do
       end
       it "last_name_kanaが全角カタカナであれば登録できる" do
-
+      end
     end
 
     context '新規登録がうまくいかないとき' do
