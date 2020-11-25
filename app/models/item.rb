@@ -12,6 +12,12 @@ class Item < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
-  validates :category_id, numericality: { other_than: 1 } 
+  belongs_to :sales_status
+  
+  with_options numericality: { other_than: 1 } do
+    validates :category_id
+    validates :sales_status_id
+    validates :price
+  end
 
 end
