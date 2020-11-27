@@ -3,9 +3,14 @@ class Item < ApplicationRecord
   has_one :purchase
   has_one_attached :image
 
-  validates :image, presence: true
-  validates :name, presence: true, length: { maximum: 40 }
-  validates :info, presence: true, length: { maximum: 1000 }
+  with_options presence: true do
+    validates :image
+    validates :name
+    validates :info
+  end
+  
+  validates :name,  length: { maximum: 40 }
+  validates :info,  length: { maximum: 1000 }
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
