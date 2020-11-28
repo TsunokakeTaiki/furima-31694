@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :mismatch_login, only: [:edit, :update, :destroy]
 
   def index
-    @item = Item.all
+    @item = Item.all.order("created_at DESC")
   end
 
   def new
