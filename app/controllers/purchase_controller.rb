@@ -4,12 +4,22 @@ class PurchaseController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  def new
+    @item_purchase = ItemPurchase.new
+  end
+
   def create
-    Purchase.create(purchase_params)
+    @item_purchase = ItemPurchase.new(purchase_params)
+    if @item_purchase.valid?
+      @@item_purchase.save
+      redirect_to action: :index
+    else
+      render action: :new
+    end
   end
 
   private
   def purchase_params
-    params.require(:purchase).merge(user_id: current_user.id, item_id: params[:item_id])
+    params.require(:item_purchase).permit(:postial_code, :prefecture_id, :city, :addresses, :building, :phone_number）.merge(user_id: current_user.id, item_id: params[:item_id])
   end
 end
