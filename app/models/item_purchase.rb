@@ -9,6 +9,8 @@ class ItemPurchase
     validates :city
     validates :addresses
     validates :phone_number, format: { with: /\A\d{10,11}\z/ }
+    validates :item_id
+    validates :user_id
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
