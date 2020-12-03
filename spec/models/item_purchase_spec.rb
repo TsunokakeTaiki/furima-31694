@@ -29,7 +29,7 @@ RSpec.describe ItemPurchase, type: :model do
       it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
         @item_purchase.postial_code = '1234567'
         @item_purchase.valid?
-        expect(@item_purchase.errors.full_messages).to include("Postial code is invalid")
+        expect(@item_purchase.errors.full_messages).to include('Postial code is invalid')
       end
       it 'prefectureを選択していないと保存できないこと' do
         @item_purchase.prefecture_id = '1'
@@ -54,7 +54,7 @@ RSpec.describe ItemPurchase, type: :model do
       it 'phone_numberが10桁か11桁の正しい形式でないと保存できないこと' do
         @item_purchase.phone_number = '123456789'
         @item_purchase.valid?
-        expect(@item_purchase.errors.full_messages).to include("Phone number is invalid")
+        expect(@item_purchase.errors.full_messages).to include('Phone number is invalid')
       end
     end
   end
