@@ -1,8 +1,9 @@
 class ItemPurchase
   include ActiveModel::Model
-  attr_accessor :postial_code, :prefecture_id, :city, :addresses, :building, :phone_number, :item_id, :user_id
+  attr_accessor :token,:postial_code, :prefecture_id, :city, :addresses, :building, :phone_number, :item_id, :user_id
 
   with_options presence: true do
+    validates :token
     validates :postial_code, length: { maximum: 8 }
     validates :prefecture_id
     validates :city
