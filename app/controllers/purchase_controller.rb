@@ -1,5 +1,7 @@
 class PurchaseController < ApplicationController
-
+  before_action :authenticate_user!
+  before_action :current_user_dealer
+  before_action :soldout_item
   before_action :set_item
 
   def index
@@ -20,6 +22,15 @@ class PurchaseController < ApplicationController
 
   private
 
+  def current_user_dealer
+    redirect_to root_path if current_user == Item.find(params[:item_id]).user
+  end
+
+  def soldout_item
+    @item = Item.find(params[:item_id])
+    redirect_to root_path if @item.purchase.present?
+  end
+
   def set_item
     @item = Item.find(params[:item_id])
   end
@@ -37,4 +48,5 @@ class PurchaseController < ApplicationController
       currency: 'jpy'
     )
   end
+
 end

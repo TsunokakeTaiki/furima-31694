@@ -4,11 +4,11 @@ class ItemPurchase
 
   with_options presence: true do
     validates :token
-    validates :postial_code, length: { maximum: 8 }
+    validates :postial_code, format: { with: /\A\d{3}[-]\d{4}\z/ } 
     validates :prefecture_id
     validates :city
     validates :addresses
-    validates :phone_number
+    validates :phone_number, format: { with: /\A\d{10,11}\z/}
   end
 
   extend ActiveHash::Associations::ActiveRecordExtensions
